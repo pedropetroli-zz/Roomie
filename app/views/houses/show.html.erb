@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-6">
+  	<div class="thumbnail">
+  		<%= image_tag @house.image.url %>
+  	</div>
+  </div>
+  <div class="col-md-6">
+    
+    <h4><%= @house.name %></h4>
+    <p><%= number_to_currency(@house.rental) %></p>
+    <p><%= @house.address%></p>
+
+	<%= link_to 'Edit', edit_house_path(@house), class: "btn btn-link" %> |
+	<%= link_to 'Back', houses_path, class: "btn btn-link" %>
+  </div>
+</div>
+

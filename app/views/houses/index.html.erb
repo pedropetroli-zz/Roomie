@@ -1,0 +1,21 @@
+<div class="center">
+  <div class="row">
+    <% @houses.each do |house| %>
+      <div class="col-md-3">
+        <div class="thumbnail">
+           <%= image_tag house.image.url %>
+          <div class="caption">
+            <h4><%= house.name %></h4>
+            <p><%= number_to_currency(house.rental) %><br></p>
+            <%= link_to 'Show', house, class: "btn btn-link" %>
+        <%= link_to 'Edit', edit_house_path(house), class: "btn btn-link" %>
+        <%= link_to 'Delete', house, class: "btn btn-link", method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br>
+
+<%= link_to 'Add place', new_house_path, class: "btn btn-link" %>
