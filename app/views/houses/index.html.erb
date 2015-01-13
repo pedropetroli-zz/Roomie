@@ -3,13 +3,17 @@
     <% @houses.each do |house| %>
       <div class="col-md-3">
         <div class="thumbnail">
-           <%= image_tag house.image.url %>
+           <%= link_to (image_tag house.image.url), house %>
           <div class="caption">
             <h4><%= house.name %></h4>
-            <p><%= number_to_currency(house.rental) %><br></p>
-            <%= link_to 'Show', house, class: "btn btn-link" %>
-        <%= link_to 'Edit', edit_house_path(house), class: "btn btn-link" %>
-        <%= link_to 'Delete', house, class: "btn btn-link", method: :delete, data: { confirm: 'Are you sure?' } %>
+            <p><%= number_to_currency(house.rental) %></p>
+            <%= link_to edit_house_path(house), class: "btn btn-default" do %>
+              <i class="glyphicon glyphicon-pencil"></i>
+            <% end %>
+
+            <%= link_to 'Delete', house, class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure you want to delete the house?'} %>
+
+          
           </div>
         </div>
       </div>
@@ -18,4 +22,6 @@
 </div>
 <br>
 
-<%= link_to 'Add place', new_house_path, class: "btn btn-link" %>
+<%= link_to new_house_path, class: "btn btn-default" do %>
+              <i class="glyphicon glyphicon-plus"></i>
+            <% end %>

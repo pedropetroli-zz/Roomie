@@ -1,4 +1,4 @@
-@import "bootstrap";
+ @import "bootstrap";
 
 	body {
 	background-color: #F5F5F1;
@@ -40,9 +40,11 @@
 
 	.caption {
 
-		h4 {font-size: 18px;
+		h4 {font-size: 15px;
 			margin: 2px;}
-		p {font-size: 15px;
+		p {font-size: 14px;
 			margin: 0px;}
 	}
-
+	.nav .navbar-nav .navbar-right	{
+		margin-right: 12px;
+	}
