@@ -10,7 +10,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-
+gem "paperclip-dropbox"
+gem "figaro"
 
 group :production do
 	gem 'pg'

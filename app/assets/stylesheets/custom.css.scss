@@ -1,27 +1,36 @@
  @import "bootstrap";
 
 	body {
-	background-color: #F5F5F1;
+	background-color: #F5EFE6;
 	color: #333333;	
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Open sans, Lucida Grande, ProximaNova;
+		h3 {font-family: Open sans, Lucida Grande, ProximaNova;}
+		h2 {font-family: Open sans, Lucida Grande, ProximaNova;}
+
 	}
 
 	.navbar-default{
-	background-color: #EFEFEB;
+	background-color: #FFFFFF;
+	height: 80px;
+	border: 0px;
 	}
 
 	.navbar-default .navbar-brand {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 30px;
+	font-family: Open sans, Lucida Grande, ProximaNova;
 	font-weight: 400;
 	color: #d5641c;
+	height: 80px;
+	width: 120px;
+	text-align: center;
 	} 
 
 	.navbar-default .navbar-nav > li > a {
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: Open sans, Lucida Grande, ProximaNova;
 		font-size: 14px;
 		font-weight: bold;
 		color: #819285;
+		height: 80px;
+
 	}
 
 	.center {
@@ -41,10 +50,18 @@
 	.caption {
 
 		h4 {font-size: 15px;
-			margin: 2px;}
-		p {font-size: 14px;
-			margin: 0px;}
+			margin: 2px;
+			height: 18px;}
+		p {font-size: 13px;
+			margin: 0px;
+			height: 22px;}
 	}
-	.nav .navbar-nav .navbar-right	{
+	.navbar-default .navbar-nav .navbar-right	{
 		margin-right: 12px;
+		font-family: Open sans, Lucida Grande, ProximaNova;
+		height: 70px;
 	}
+	.thumbnail {
+		border: 0px;
+	}
+
