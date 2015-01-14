@@ -3,7 +3,6 @@
     <% @houses.each do |house| %>
       <div class="col-md-3">
         <div class="thumbnail">
-         <%= link_to (image_tag house.image.url), house %>
           <div class="caption">
             <h4><%= house.name %></h4>
             <p><%= number_to_currency(house.rental) %></p>
