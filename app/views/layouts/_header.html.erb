@@ -3,13 +3,17 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="/">Roomie</a>
     </div>
-
-    <div class="nav">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/pages/login">Login</a></li>
-        <li><a href="/pages/about">About</a></li>
-        <li><a href="/pages/terms">Terms</a></li>
-    </div>
+        <% if user_signed_in? %>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete%></li>
+        <li><%= link_to "Edit Profile", edit_user_registration_path%></li>
+        <% else %>
+        <li><%= link_to "Login", user_session_path%></li>
+      <% end %> 
+      <li><%= link_to "About", pages_about_path%></li>
+        <li><%= link_to "Terms", pages_terms_path%></li>
       </ul>
+    </div>
   </div><!-- /.container-fluid -->
 </nav>
