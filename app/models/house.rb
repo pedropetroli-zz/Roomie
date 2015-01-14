@@ -7,6 +7,8 @@ class House < ActiveRecord::Base
         :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
         :path => ":style/:id_:filename"
   end
-
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  validates :name, :address, :rental, presence: true
+  validates :rental, numericality: { greater_than: 0}
+  validates :image, :attachment_presence => true
 end
