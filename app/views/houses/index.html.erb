@@ -7,6 +7,7 @@
           <div class="caption">
             <h4><%= house.name %></h4>
             <p><%= number_to_currency(house.rental) %></p>
+            <p><%= house.user.name %></p>
             <%= link_to edit_house_path(house), class: "btn btn-default" do %>
               <i class="glyphicon glyphicon-pencil"></i>
             <% end %>

@@ -11,4 +11,6 @@ class House < ActiveRecord::Base
   validates :name, :address, :rental, presence: true
   validates :rental, numericality: { greater_than: 0}
   validates :image, :attachment_presence => true
+
+  belongs_to :user
 end
