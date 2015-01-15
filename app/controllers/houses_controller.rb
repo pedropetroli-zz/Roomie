@@ -1,5 +1,7 @@
 class HousesController < ApplicationController
   before_action :set_house, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :upgrade, :destroy]
+  before_action :check_user, only: [:edit, :update, :destroy]
 
   # GET /houses
   # GET /houses.json
@@ -42,7 +44,7 @@ class HousesController < ApplicationController
   def update
     respond_to do |format|
       if @house.update(house_params)
-        format.html { redirect_to @house, notice: 'House was successfully updated.' }
+        format.html { redirect_to @house, notice: 'Just like new.' }
         format.json { render :show, status: :ok, location: @house }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ class HousesController < ApplicationController
   def destroy
     @house.destroy
     respond_to do |format|
-      format.html { redirect_to houses_url, notice: 'House was successfully destroyed.' }
+      format.html { redirect_to houses_url, notice: 'Bye bye house.' }
       format.json { head :no_content }
     end
   end
@@ -70,5 +72,11 @@ class HousesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def house_params
       params.require(:house).permit(:name, :address, :rental, :image)
+    end
+
+    def check_user
+     if current_user != @house.user
+      redirect_to root_url, alert: "Sorry, this house belongs to another Roomie"
+     end
     end
 end
