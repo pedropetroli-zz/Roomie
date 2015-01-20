@@ -7,5 +7,4 @@ class User < ActiveRecord::Base
   validates :name, presence: true
 
   has_many :houses, dependent: :destroy
-  has_many :rents, class_name: "Order", foreign_key: "host_id"
 end
