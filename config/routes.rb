@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
+  resources :orders
+
   devise_for :users
   resources :houses
 
   root 'houses#index'
 
   get 'pages/login'
-
   get 'pages/about'
-
   get 'pages/contact'
-
   get 'pages/terms'
+  get 'host' => 'houses#host'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

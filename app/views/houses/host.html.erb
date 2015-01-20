@@ -1,0 +1,41 @@
+<table class="table table-striped table-bordered">
+  <tr>
+    <th class="center">Image</th>
+    <th class="center">Name</th>
+    <th class="center">House Descript</th>
+    <th class="center">Rental</th>
+    <th class="center">Action</th>
+  </tr>
+
+  <% @houses.each do |house| %>
+    <tr>
+      <td> <%= image_tag house.image.url(:thumb) %></td>
+      <td> <%= house.name %></td>
+      <td> <%= house.address %></td>
+      <td> <%= number_to_currency(house.rental) %></td>
+      <td>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            Action <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to "View", house, class: "btn btn-default" %>
+              <%= link_to edit_house_path(house), class: "btn btn-default" do %>
+              <i class="glyphicon glyphicon-pencil"></i>
+              <% end %></li>
+            <li><%= link_to 'Delete', house, class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure you want to delete the house?'} %> </li>
+          </ul>
+        </div>
+        
+      </td>
+    </tr>
+  <% end %>
+</table>
+<br>
+
+<% if (user_signed_in?) %>
+  <%= link_to new_house_path, class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-plus"></i>
+  <% end %>
+<% end %> 

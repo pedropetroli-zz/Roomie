@@ -13,4 +13,5 @@ class House < ActiveRecord::Base
   validates :image, :attachment_presence => true
 
   belongs_to :user
+  has_many :rentings
 end
