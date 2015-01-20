@@ -1,12 +1,17 @@
 class HousesController < ApplicationController
   before_action :set_house, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :upgrade, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :upgrade, :destroy, :host]
   before_action :check_user, only: [:edit, :update, :destroy]
 
+
+  def host
+    @houses = House.where(user: current_user).order("created_at DESC")
+  end
+    
   # GET /houses
   # GET /houses.json
   def index
-    @houses = House.all
+    @houses = House.all.order("created_at DESC")
   end
 
   # GET /houses/1

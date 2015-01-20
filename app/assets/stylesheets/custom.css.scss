@@ -4,9 +4,8 @@
 	background-color: #F5EFE6;
 	color: #333333;	
 	font-family: Open sans, Lucida Grande, ProximaNova;
-		h3 {font-family: Open sans, Lucida Grande, ProximaNova;}
-		h2 {font-family: Open sans, Lucida Grande, ProximaNova;}
-
+	h3 {font-family: Open sans, Lucida Grande, ProximaNova;}
+	h2 {font-family: Open sans, Lucida Grande, ProximaNova;}
 	}
 
 	.navbar-default{
@@ -26,46 +25,42 @@
 	}
 
 	.navbar-default .navbar-nav > li > a {
-		font-family: Open sans, Lucida Grande, ProximaNova;
-		font-size: 14px;
-		font-weight: bold;
-		color: #819285;
-		height: 80px;
-
+	font-family: Open sans, Lucida Grande, ProximaNova;
+	font-size: 14px;
+	font-weight: bold;
+	color: #819285;
+	height: 80px;
 	}
 
 	.center {
-		text-align: center;
+	text-align: center;
 	}
 
 	.col-md-3:nth-child(4n+1) {
-		clear: left;
+	clear: left;
 	}
 
 	.col-md-6 {
-		h4 {font-size: 28px;}
-		h5 {font-size: 24px;}
-		p {font-size: 15px;}
+	h4 {font-size: 28px;}
+	h5 {font-size: 24px;}
+	p {font-size: 15px;}
 	}
 
 	.caption {
-
-		h4 {font-size: 15px;
-			margin: 2px;
-			height: 18px;}
-		p {font-size: 13px;
-			margin: 0px;
-			height: 22px;}
+	h4 {font-size: 15px;
+	margin: 2px;
+	height: 18px;}
+	p {font-size: 13px;
+	margin: 0px;
+	height: 22px;}
 	}
+
 	.navbar-default .navbar-nav .navbar-right	{
-		margin-right: 12px;
-		font-family: Open sans, Lucida Grande, ProximaNova;
-		height: 70px;
+	margin-right: 12px;
+	font-family: Open sans, Lucida Grande, ProximaNova;
+	height: 70px;
 	}
+	
 	.thumbnail {
-		border: 0px;
-	}
-	.row1 {
-
-
+	border: 0px;
 	}

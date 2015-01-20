@@ -11,8 +11,13 @@
 
       		<%= render 'form' %>
 
-      		<%= link_to 'Show', @house %> |
-      		<%= link_to 'Back', houses_path %>
+          <%= link_to houses_path, class: "btn btn-default" do %>
+            <i class="glyphicon glyphicon-chevron-left"></i>
+          <% end %>
+
+          <%= link_to @house, class: "btn btn-default" do %>
+             <i class="glyphicon glyphicon-zoom-in"></i>
+          <% end %> 
         </div>   
     </div>
   </div>  

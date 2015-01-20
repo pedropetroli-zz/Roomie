@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :rentings
+
   devise_for :users
   resources :houses
 

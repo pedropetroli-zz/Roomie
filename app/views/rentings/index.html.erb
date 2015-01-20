@@ -1,0 +1,29 @@
+<h1>Listing rentings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>State</th>
+      <th>City</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rentings.each do |renting| %>
+      <tr>
+        <td><%= renting.country %></td>
+        <td><%= renting.state %></td>
+        <td><%= renting.city %></td>
+        <td><%= link_to 'Show', renting %></td>
+        <td><%= link_to 'Edit', edit_renting_path(renting) %></td>
+        <td><%= link_to 'Destroy', renting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Renting', new_renting_path %>
