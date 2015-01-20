@@ -1,14 +1,13 @@
 <div class="center">
+  <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
        <div class="thumbnail">
           <div class="thumbnail">
           	<h3>Resend unlock instructions</h3>
-
-			<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-			  <%= devise_error_messages! %>
-
+          	
 			  <div class="form-group">
 			    <%= f.label :email %><br />
 			    <%= f.email_field :email, autofocus: true, class: "form-control" %>

@@ -10,7 +10,9 @@
 
       			<%= render 'form' %>
 
-      			<%= link_to 'Back', houses_path %>
+      			<%= link_to houses_path, class: "btn btn-default" do %>
+              <i class="glyphicon glyphicon-chevron-left"></i>
+            <% end %>
 
 		      </div>   
       </div>
