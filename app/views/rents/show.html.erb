@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @rent.country %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @rent.state %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @rent.city %>
+</p>
+
+<%= link_to 'Edit', edit_rent_path(@rent) %> |
+<%= link_to 'Back', rents_path %>
