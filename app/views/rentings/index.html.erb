@@ -1,11 +1,15 @@
 <h1>Listing rentings</h1>
 
-<table>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th>Country</th>
-      <th>State</th>
-      <th>City</th>
+      <th class="center">House</th>
+      <th class="center">Country</th>
+      <th class="center">State</th>
+      <th class="center">City</th>
+      <th class="center">Guest</th>
+      <th class="center">Rental</th>
+      <th class="center">Period</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,17 +17,22 @@
   <tbody>
     <% @rentings.each do |renting| %>
       <tr>
+        <td><%= renting.city %></td>
         <td><%= renting.country %></td>
         <td><%= renting.state %></td>
         <td><%= renting.city %></td>
-        <td><%= link_to 'Show', renting %></td>
-        <td><%= link_to 'Edit', edit_renting_path(renting) %></td>
-        <td><%= link_to 'Destroy', renting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= renting.host_id %></td>
+        <td><%= renting.city %></td>
+        <td><%= renting.city %></td>
+        <td>
+          <div class="action">
+            <%= link_to renting, class: "btn btn-default" do %>
+              <i class="glyphicon glyphicon-zoom-in"></i>
+            <% end %> 
+          </div></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Renting', new_renting_path %>

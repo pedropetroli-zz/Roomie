@@ -3,7 +3,7 @@ class HousesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :upgrade, :destroy, :host]
   before_action :check_user, only: [:edit, :update, :destroy]
 
-
+ 
   def host
     @houses = House.where(user: current_user).order("created_at DESC")
   end

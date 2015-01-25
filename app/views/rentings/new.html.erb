@@ -1,5 +1,32 @@
-<h1>New renting</h1>
+<div class="center">
+  <% if @renting.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <h4><%= pluralize(@renting.errors.count, "error") %> prohibited this renting from being saved:</h4>
 
-<%= render 'form' %>
+      <ul>
+      <% @renting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+       <div class="thumbnail">
+	      <div class="thumbnail">
+			<h1>Renting</h1>
 
-<%= link_to 'Back', rentings_path %>
+			<%= render 'form' %>
+
+	 			<%= link_to rentings_path, class: "btn btn-default" do %>
+	          		<i class="glyphicon glyphicon-chevron-left"></i>
+	        	<% end %>
+
+		   </div>   
+	  </div>
+    </div>  
+  </div>
+</div>

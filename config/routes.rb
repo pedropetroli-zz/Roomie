@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   resources :rentings
 
   devise_for :users
-  resources :houses
-  resources :rentings
+  resources :houses do
+    resources :rentings
+  end
 
   root 'houses#index'
 

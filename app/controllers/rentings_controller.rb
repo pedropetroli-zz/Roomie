@@ -1,5 +1,7 @@
 class RentingsController < ApplicationController
   before_action :set_renting, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :check_user, only: [:edit, :update, :destroy]
 
   respond_to :html
 
@@ -14,6 +16,8 @@ class RentingsController < ApplicationController
 
   def new
     @renting = Renting.new
+    @house = House.find(params[:house_id])
+
     respond_with(@renting)
   end
 
@@ -22,8 +26,22 @@ class RentingsController < ApplicationController
 
   def create
     @renting = Renting.new(renting_params)
-    @renting.save
-    respond_with(@renting)
+    @house = House.find(params[:house_id])
+    @host = @house.user
+    
+    @renting.house_id = @house.id
+    @renting.guest_id = current_user.id
+    @renting.host_id = @host.id 
+
+    respond_to do |format|
+      if @renting.save
+        format.html { redirect_to root_url, notice: 'Renting order successfuly created.' }
+        format.json { render :show, status: :created, location: @renting }
+      else
+        format.html { render :new }
+        format.json { render json: @renting.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update

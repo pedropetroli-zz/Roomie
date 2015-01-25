@@ -1,8 +1,18 @@
-<div>
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-</div>
 <div class="center">
+  
+  % if @house.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <h4><%= pluralize(@house.errors.count, "error") %> prohibited this house from being saved:</h4>
+
+      <ul>
+      <% @house.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
@@ -24,7 +34,7 @@
               <div class="form-group">
                 <%= f.label :password %>
                 <% if @validatable %>
-                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
                 <% end %><br />
                 <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
               </div>
@@ -36,14 +46,12 @@
 
               <div class="actions">
                 <%= f.submit "Sign up", class: "btn btn-primary" %>
-              </div>
-            <% end %>
-            
-            <br>
-            <%= render "devise/shared/links" %>
+              </div><br>
 
+            <%= render "devise/shared/links" %>
         </div>   
       </div>
     </div>  
   </div>
 </div>
+<% end %>
