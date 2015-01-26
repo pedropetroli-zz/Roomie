@@ -1,5 +1,5 @@
 class Renting < ActiveRecord::Base
-	validates :country, :city, :state, presence: true
+	validates :arrival, :departure, :insurance, presence: true
 
 	belongs_to :house
 	belongs_to :guest, class_name: "User"

@@ -5,6 +5,14 @@ class RentingsController < ApplicationController
 
   respond_to :html
 
+  def rentals
+    @renting = Renting.all.where(host: current_user).order("created_at DESC")
+  end
+
+  def hires
+    @renting = Renting.all.where(guest: current_user).order("created_at DESC")
+  end
+  
   def index
     @rentings = Renting.all
     respond_with(@rentings)
@@ -18,10 +26,7 @@ class RentingsController < ApplicationController
     @renting = Renting.new
     @house = House.find(params[:house_id])
 
-    respond_with(@renting)
-  end
-
-  def edit
+    #respond_with(@renting)
   end
 
   def create
@@ -35,7 +40,7 @@ class RentingsController < ApplicationController
 
     respond_to do |format|
       if @renting.save
-        format.html { redirect_to root_url, notice: 'Renting order successfuly created.' }
+        format.html { redirect_to root_url, notice: 'Your renting reservation is made.' }
         format.json { render :show, status: :created, location: @renting }
       else
         format.html { render :new }
@@ -60,6 +65,6 @@ class RentingsController < ApplicationController
     end
 
     def renting_params
-      params.require(:renting).permit(:country, :state, :city)
+      params.require(:renting).permit(:arrival, :departure, :insurance)
     end
 end

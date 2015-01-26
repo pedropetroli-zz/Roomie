@@ -1,0 +1,77 @@
+Searching 96 files for ""Check-up insurance""
+
+0 matches across 0 files
+
+
+Searching 96 files for "Check-up insurance"
+
+/Users/macbookpro/roomie/app/controllers/rentings_controller.rb:
+   58  
+   59      def renting_params
+   60:       params.require(:renting).permit(:arrival, :departure, :Check-up insurance)
+   61      end
+   62  end
+
+/Users/macbookpro/roomie/app/models/renting.rb:
+    1  class Renting < ActiveRecord::Base
+    2: 	validates :arrival, :Check-up insurance, :departure, presence: true
+    3  
+    4  	belongs_to :house
+
+/Users/macbookpro/roomie/app/views/rentings/_form.html.erb:
+   10    </div>
+   11    <div class="form-group">
+   12:     <%= f.label :Check-up insurance %>
+   13:     <%= f.text_field :Check-up insurance, class: "form-control" %>
+   14    </div>
+   15    <div class="actions">
+
+/Users/macbookpro/roomie/app/views/rentings/index.html.erb:
+    6        <th class="center">Arrival</th>
+    7        <th class="center">Departure</th>
+    8:       <th class="center">Check-up insurance</th>
+    9        <th class="center">Guest</th>
+   10        <th class="center">Amount</th>
+   ..
+   17      <% @rentings.each do |renting| %>
+   18        <tr>
+   19:         <td><%= renting.Check-up insurance %></td>
+   20          <td><%= renting.arrival %></td>
+   21          <td><%= renting.departure %></td>
+   22:         <td><%= renting.Check-up insurance %></td>
+   23          <td><%= renting.host_id %></td>
+   24          <td><%= renting.host_amount %></td>
+
+/Users/macbookpro/roomie/app/views/rentings/index.json.jbuilder:
+    1  json.array!(@rentings) do |renting|
+    2:   json.extract! renting, :id, :arrival, :departure, :Check-up insurance
+    3    json.url renting_url(renting, format: :json)
+    4  end
+
+/Users/macbookpro/roomie/app/views/rentings/show.html.erb:
+   12  
+   13  <p>
+   14:   <strong>Check-up insurance:</strong>
+   15:   <%= @renting.Check-up insurance %>
+   16  </p>
+   17  
+
+/Users/macbookpro/roomie/app/views/rentings/show.json.jbuilder:
+    1: json.extract! @renting, :id, :arrival, :departure, :Check-up insurance, :created_at, :updated_at
+    2  
+
+/Users/macbookpro/roomie/db/migrate/20150120190919_create_rentings.rb:
+    4        t.string :arrival
+    5        t.string :departure
+    6:       t.string :Check-up insurance
+    7  
+    8        t.timestamps
+
+/Users/macbookpro/roomie/db/seeds.rb:
+    4  # Examples:
+    5  #
+    6: #   cities = Check-up insurance.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+    7: #   Mayor.create(name: 'Emanuel', Check-up insurance: cities.first)
+    8  
+
+14 matches across 9 files
