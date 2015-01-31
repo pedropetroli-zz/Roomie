@@ -1,17 +1,5 @@
 <div class="center">
-  
-  % if @house.errors.any? %>
-    <div id="error_explanation" class="alert alert-danger alert-dismissable">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <h4><%= pluralize(@house.errors.count, "error") %> prohibited this house from being saved:</h4>
 
-      <ul>
-      <% @house.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="row">
     <div class="col-md-4"></div>
@@ -21,6 +9,8 @@
 
             <h3>Become a Roomie</h3><br>
 
+              <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %> 
+              
               <div class="form-group">
                 <%= f.label :name %>
                 <%= f.text_field :name, autofocus: true, class: "form-control" %>
@@ -48,10 +38,11 @@
                 <%= f.submit "Sign up", class: "btn btn-primary" %>
               </div><br>
 
+              <% end %>
+
             <%= render "devise/shared/links" %>
         </div>   
       </div>
     </div>  
   </div>
 </div>
-<% end %>

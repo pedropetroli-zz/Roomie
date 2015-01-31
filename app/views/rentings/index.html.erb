@@ -5,7 +5,7 @@
       <th class="center">House</th>
       <th class="center">Arrival</th>
       <th class="center">Departure</th>
-      <th class="center">insurance</th>
+      <th class="center">Insurance</th>
       <th class="center">Guest</th>
       <th class="center">Amount</th>
       <th class="center">Renting Code</th>
@@ -16,15 +16,15 @@
   <tbody>
     <% @rentings.each do |renting| %>
       <tr>
-        <td><%= renting.insurance %></td>
+        <td class="center"><%= image_tag renting.house.image.url(:thumb) %></td>
         <td><%= renting.arrival %></td>
         <td><%= renting.departure %></td>
         <td><%= renting.insurance %></td>
         <td><%= renting.host_id %></td>
         <td><%= renting.host_amount %></td>
         <td><%= renting.id %></td>
-        <td> <%= renting.created_at.strftime("%Y %ˆb %d") %></td>
-        <td> <%= number_to_currency(renting.rental) %></td>
+        <td><%= renting.created_at.strftime("%d-%b-%Y") %></td>
+        <td><%= number_to_currency(renting.host_amount) %></td>
         <td><div class="action">
           <%= link_to renting, class: "btn btn-default" do %>
             <i class="glyphicon glyphicon-zoom-in"></i>
@@ -33,6 +33,4 @@
       </tr>
     <% end %>
   </tbody>
-</table>
-
-<br>
+</table><br>

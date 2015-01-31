@@ -6,11 +6,11 @@ class RentingsController < ApplicationController
   respond_to :html
 
   def rentals
-    @renting = Renting.all.where(host: current_user).order("created_at DESC")
+    @rentings = Renting.all.where(host: current_user).order("created_at DESC")
   end
 
   def hires
-    @renting = Renting.all.where(guest: current_user).order("created_at DESC")
+    @rentings = Renting.all.where(guest: current_user).order("created_at DESC")
   end
   
   def index
@@ -65,6 +65,6 @@ class RentingsController < ApplicationController
     end
 
     def renting_params
-      params.require(:renting).permit(:arrival, :departure, :insurance)
+      params.require(:renting).permit(:arrival, :departure, :insurance, :rent_rate, :total_rental, :fee, :host_amount)
     end
 end
