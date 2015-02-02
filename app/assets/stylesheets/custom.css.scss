@@ -10,17 +10,14 @@
 
 	.navbar-default{
 	background-color: #FFFFFF;
-	height: 80px;
+	height: 90px;
+	font-size: 19px;
 	border: 0px;
 	}
 
 	.navbar-default .navbar-brand {
-	font-family: Open sans, Lucida Grande, ProximaNova;
-	font-weight: 400;
-	font-size: 28px;
-	color: #d5641c;
-	height: 80px;
-	width: 120px;
+	width: 160px;
+	padding-top: 10px;
 	text-align: center;
 	}
 
@@ -30,6 +27,7 @@
 	font-weight: bold;
 	color: #819285;
 	height: 80px;
+	padding: 20px;
 	}
 
 	.center {
@@ -56,11 +54,12 @@
 	}
 
 	.navbar-default .navbar-nav .navbar-right	{
-	margin-right: 12px;
+	margin-right: 45px;
 	font-family: Open sans, Lucida Grande, ProximaNova;
-	height: 70px;
+	height: 90px;
+	a {vertical-align: middle;}
 	}
-	
+
 	.thumbnail {
 	border: 0px;
 	}
@@ -69,3 +68,4 @@
 		width: full;
 	}
 
+.brand {height: 25px;}

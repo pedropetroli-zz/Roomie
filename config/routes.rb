@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :houses do
-    resources :rentings
+    resources :rentings, only: [:new, :create]
   end
 
   root 'houses#index'

@@ -3,15 +3,15 @@
 en:
   devise:
     confirmations:
-      confirmed: "Your email address has been successfully confirmed."
-      send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
+      confirmed: "We got you."
+      send_instructions: "You'll receive an instruction email before your beer get warm."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
     failure:
       already_authenticated: "You are already signed in."
       inactive: "Your account is not activated yet."
-      invalid: "We don't recognize your %{authentication_keys} or password."
-      locked: "For security reasons your account is locked."
-      last_attempt: "Hey! Strike 3..."
+      invalid: "Are you a seneaky girlfriend? I don't recognize your %{authentication_keys} or password."
+      locked: "Out! Your account is locked."
+      last_attempt: "Uou! Strike 2..."
       not_found_in_database: "Invalid %{authentication_keys} or password."
       timeout: "I fell asleep. Please login again"
       unauthenticated: "You need to sign in or sign up before continuing."
@@ -41,8 +41,8 @@ en:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
       updated: "Account fresh like new"
     sessions:
-      signed_in: "Welcome home!"
-      signed_out: "See you"
+      signed_in: "Welcome Roomie!"
+      signed_out: "See you!"
       already_signed_out: "Signed out successfully."
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
