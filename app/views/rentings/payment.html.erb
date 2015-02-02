@@ -1,0 +1,38 @@
+<div class="center">
+  <%= render 'error' %>   
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+       <div class="thumbnail">
+        <div class="thumbnail">
+      <h2>Renting</h2>
+
+      <%= form_for([@house, @renting]) do |f| %>
+
+          <div class="form-group">
+            <%= f.label :card_number, "Credit Card card_number" %>
+            <%= f.text_field_tag :card_number, nil, {:name => nil, :'data-stripe' => "number", class: "form-control"}  %>
+          </div>
+         <div class="form-group">
+            <%= f.label :card_code, "CVC" %>
+            <%= f.text_field_tag :card_code, nil, {:name => nil, :'data-stripe' => "cvc", class: "form-control"}  %>
+          </div>
+          <div>
+            <%= select_month nil, {:use_two_digit_numbers: true}, {:name => nil, :'data-stripe' => "exp-month", class: "form-control"} %>
+            <%= select_year nil,  {start_year: Date.today.year, end_year: Date.today.year+10}, {:name => nil, :'data-stripe' => "exp-year", class: "form-control"} %>
+          </div><br>
+
+          <div class="actions">
+            <%= f.submit class: "btn btn-success" %>
+          </div><br>
+        <% end %>
+
+        <%= link_to new_house_renting_path(@house), class: "btn btn-default" do %>
+                <i class="glyphicon glyphicon-chevron-left"></i>
+            <% end %>
+
+       </div>   
+    </div>
+    </div>  
+  </div>
+</div>

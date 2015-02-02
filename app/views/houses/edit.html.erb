@@ -1,28 +1,16 @@
-
 <div class="center">
-  
-    <% if @house.errors.any? %>
-    <div id="error_explanation" class="alert alert-danger alert-dismissable">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <h4><%= pluralize(@house.errors.count, "error") %> prohibited this house from being saved:</h4>
-
-      <ul>
-      <% @house.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+  <%= render 'error' %>  
   <div class="row">
     <div class="col-md-6">
       <div class="thumbnail">
         <%= image_tag @house.image.url %>
       </div>
     </div>
-    <div class="col-md-4">
-       <div class="thumbnail">
-      		<h2>Edit your place</h2>
+
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
+    <div class="thumbnail">
+     		<h3>Edit your place</h3><br>
 
       		<%= render 'form' %>
 
@@ -32,8 +20,8 @@
 
           <%= link_to @house, class: "btn btn-default" do %>
              <i class="glyphicon glyphicon-zoom-in"></i>
-          <% end %> 
-        </div>   
+          <% end %>
+    </div>
     </div>
   </div>  
 </div>

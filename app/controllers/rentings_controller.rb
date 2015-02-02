@@ -12,15 +12,7 @@ class RentingsController < ApplicationController
   def hires
     @rentings = Renting.all.where(guest: current_user).order("created_at DESC")
   end
-  
-  def index
-    @rentings = Renting.all
-    respond_with(@rentings)
-  end
 
-  def show
-    respond_with(@renting)
-  end
 
   def new
     @renting = Renting.new
@@ -47,16 +39,6 @@ class RentingsController < ApplicationController
         format.json { render json: @renting.errors, status: :unprocessable_entity }
       end
     end
-  end
-
-  def update
-    @renting.update(renting_params)
-    respond_with(@renting)
-  end
-
-  def destroy
-    @renting.destroy
-    respond_with(@renting)
   end
 
   private
