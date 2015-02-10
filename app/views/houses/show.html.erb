@@ -2,23 +2,33 @@
   <div class="col-md-6">
   	<div class="thumbnail">
   		<%= image_tag @house.image.url %>
+      <div>
+        <h4><%= @house.name %></h4>
+        <p><%= number_to_currency(@house.rental) %></p>
+        <p><%= @house.address%></p>
+
+        <%= link_to "Be a Roomie", new_house_renting_path(@house), class: "btn btn-primary" %><br>
+
+        <% if current_user == @house.user %>
+            <%= link_to 'Edit', edit_house_path(@house), class: "btn btn-link" %> |
+        <% end %>
+      </div>
   	</div>
   </div>
   <div class="col-md-6">
-    
-    <h4><%= @house.name %></h4>
-    <p><%= number_to_currency(@house.rental) %></p>
-    <p><%= @house.address%></p>
-    <%= link_to "Be a Roomie", new_house_renting_path(@house), class: "btn btn-primary" %>
 
-    <% if current_user == @house.user %>
-        <%= link_to 'Edit', edit_house_path(@house), class: "btn btn-link" %> |
-    <% end %>
+  <iframe
+  width="600"
+  height="600"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDi7mYujV5y-wZ20hiNx_5FRQb-bItm1v8
+    &q=ronald-de-carvalho-21">
+  </iframe>  
+
+  </div>
 
     <br><br><%= link_to houses_path, class: "btn btn-default" do %>
       <i class="glyphicon glyphicon-chevron-left"></i>
     <% end %>
-
-  </div>
 </div>
 

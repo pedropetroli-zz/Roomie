@@ -1,18 +1,36 @@
 <%= form_for([@house, @renting]) do |f| %>
 
+  <div class="row">
+    <div class="col-md-7">
+      <div class="form-group">
+        <%= label_tag :card_number, "Credit Card Number" %>
+        <%= text_field_tag :card_number, nil, { :name => nil, :'data-stripe' => "number", class: "form-control" } %>
+      </div>
+    </div>
+      <div class="col-md-3">
+        <%= label_tag :card_code, "CVC" %>
+        <%= text_field_tag :card_code, nil, { :name => nil, :'data-stripe' => 'cvc', class: "form-control" } %>
+      </div>
+    </div>
   <div class="form-group">
-    <%= f.label :arrival%>
-    <%= f.text_field :arrival, class: "form-control"  %>
-  </div>
-  <div class="form-group">
-    <%= f.label :departure %>
-    <%= f.text_field :departure, class: "form-control" %>
-  </div>
-    <div>
+    <div class="row">
+      <div class="col-md-4">
+        <%= label_tag nil, "Exp. Month" %>
+        <%= select_month nil, { use_two_digit_numbers: true}, {:name => nil, :'data-stripe' => "exp_month", class: "form-control" } %>
+      </div>
+      <div class="col-md-4">
+        <%= label_tag nil, "Exp. Year" %>
+        <%= select_year nil, { start_year: Date.today.year, end_year: Date.today.year+10}, {:name => nil, :'data-stripe' => "exp_year", class: "form-control" } %>
+      </div>
+    </div>
+  </div><br>
+  
+  <div>
     <%= f.check_box :insurance, {checked: true} %> 
     <%= f.label 'Check up Protection' %> (24h to check house installations with money back option and reallocation)
   </div><br>
+
   <div class="actions">
-    <%= f.submit class: "btn btn-success" %>
+    <%= f.submit "Complete Renting", class: "btn btn-success" %>
   </div><br>
 <% end %>

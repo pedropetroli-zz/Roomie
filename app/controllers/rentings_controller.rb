@@ -1,7 +1,6 @@
 class RentingsController < ApplicationController
   before_action :set_renting, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :check_user, only: [:edit, :update, :destroy]
 
   respond_to :html
 

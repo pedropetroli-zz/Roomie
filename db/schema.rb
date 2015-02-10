@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126031728) do
+ActiveRecord::Schema.define(version: 20150210050805) do
+
+  create_table "calendars", force: true do |t|
+    t.integer  "house_id"
+    t.date     "arrival"
+    t.date     "departure"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "house_searches", force: true do |t|
+    t.integer  "house_id"
+    t.date     "arrival"
+    t.date     "departure"
+    t.decimal  "total_amounth"
+    t.decimal  "rental"
+    t.decimal  "fee"
+    t.decimal  "insurance"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "researcher_id"
+  end
 
   create_table "houses", force: true do |t|
     t.string   "name"
@@ -39,6 +60,17 @@ ActiveRecord::Schema.define(version: 20150126031728) do
     t.integer  "fee"
     t.boolean  "insurance"
     t.integer  "host_amount"
+  end
+
+  create_table "reviews", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "house_id"
+    t.integer  "renting_id"
+    t.integer  "rating_1"
+    t.integer  "rating_2"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "comment"
   end
 
   create_table "users", force: true do |t|

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :reviews
+
+  resources :calendars
+
+  resources :house_searches
+
   resources :rentings
 
   devise_for :users

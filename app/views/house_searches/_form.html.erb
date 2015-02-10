@@ -1,0 +1,31 @@
+<div class="center">
+
+  </div>
+  <div class="field">
+    <%= f.label :arrival %><br>
+    <%= f.date_select :arrival %>
+  </div>
+  <div class="field">
+    <%= f.label :departure %><br>
+    <%= f.date_select :departure %>
+  </div>
+  <div class="field">
+    <%= f.label :total_amounth %><br>
+    <%= f.text_field :total_amounth %>
+  </div>
+  <div class="field">
+    <%= f.label :rental %><br>
+    <%= f.text_field :rental %>
+  </div>
+  <div class="field">
+    <%= f.label :fee %><br>
+    <%= f.text_field :fee %>
+  </div>
+  <div class="field">
+    <%= f.label :insurance %><br>
+    <%= f.text_field :insurance %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

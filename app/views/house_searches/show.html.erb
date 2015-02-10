@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>House:</strong>
+  <%= @house_search.house_id %>
+</p>
+
+<p>
+  <strong>Arrival:</strong>
+  <%= @house_search.arrival %>
+</p>
+
+<p>
+  <strong>Departure:</strong>
+  <%= @house_search.departure %>
+</p>
+
+<p>
+  <strong>Total amounth:</strong>
+  <%= @house_search.total_amounth %>
+</p>
+
+<p>
+  <strong>Rental:</strong>
+  <%= @house_search.rental %>
+</p>
+
+<p>
+  <strong>Fee:</strong>
+  <%= @house_search.fee %>
+</p>
+
+<p>
+  <strong>Insurance:</strong>
+  <%= @house_search.insurance %>
+</p>
+
+<%= link_to 'Edit', edit_house_search_path(@house_search) %> |
+<%= link_to 'Back', house_searches_path %>

@@ -1,19 +1,32 @@
 <div class="center">
   <%= render 'error' %>  
   <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-       <div class="thumbnail">
-	      <div class="thumbnail">
-			
-			<h2>Renting</h2><br>
-			<%= render 'form' %>
- 			<%= link_to house_path(@house), class: "btn btn-default" do %>
-          		<i class="glyphicon glyphicon-chevron-left"></i>
-        	<% end %>
+    <div class="col-md-6">
 
-		   </div>   
-	  </div>
+      <%= image_tag @house.image.url %><br>
+      <div>
+        <p><%= @renting.arrival %></p>
+        <p><%= @renting.departure %></p>
+        <p><%= @renting.rent_rate %> per month</p>
+        <p><%= @renting.fee %></p>
+        <p><%= @renting.insurance %></p>
+        <p>_________</p>
+        <p><strong><%= @renting.total_rental %></strong></p>
+      </div> 
+    </div>
+
+    <div class="col-md-6">
+       <div class="thumbnail">
+			 <div class="thumbnail">
+
+    			<h2>Renting</h2><br>
+    			<%= render 'form' %>
+     			<%= link_to house_path(@house), class: "btn btn-default" do %>
+            <i class="glyphicon glyphicon-chevron-left"></i>
+          <% end %>
+
+      </div>
+      </div>
     </div>  
   </div>
 </div>

@@ -12,6 +12,8 @@ class House < ActiveRecord::Base
   validates :rental, numericality: { greater_than: 0}
   validates :image, :attachment_presence => true
 
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
   has_many :rentings
+  has_many :reviews
+  has_many :calendars
 end
